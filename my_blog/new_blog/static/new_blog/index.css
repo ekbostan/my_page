@@ -1,0 +1,153 @@
+
+  #welcome {
+    background: linear-gradient(to right top, #4e4b5c, #2b2d42);
+    padding: 6rem 12%;
+  }
+  
+  #welcome header {
+    display: flex;
+    align-items: flex-start;
+    margin: 3rem auto;
+  }
+  
+  #welcome img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #fafafa;
+    transform: rotateZ(-5deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  #welcome h2 {
+    font-size: 3.5rem;
+    margin: 0 0 0 2rem;
+    color: #fafafa;
+    width: 10rem;
+  }
+  
+  #welcome p {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  #Welcome-header{
+    display: flex;
+    flex-wrap: wrap;
+     /* Add this to wrap items to next line */
+  }
+  #latest-posts {
+    background-color: #fafafa;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 60rem;
+    margin: -6rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  #latest-posts h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  #latest-posts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Add this to wrap items to next line */
+    justify-content: center;
+    align-items:center;
+    /* gap: 1rem; */
+  }
+  
+  #latest-posts li {
+    margin: 1rem;
+    flex-basis: calc(50% - 0.5rem);
+  }
+  
+  #about {
+    text-align: center;
+    padding: 3rem;
+    background-image: linear-gradient(to right, #667eea, #764ba2);
+    margin-top: 5rem;
+    transition: all 0.2s ease;
+  }
+  
+  #about h2 {
+    font-size: 3rem;
+  }
+  
+  #about p {
+    font-size: 1.5rem;
+    color: #353535;
+  }
+  #about .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#about .profile img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+#about .name {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+#welcome .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome .profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#welcome .profile img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+#welcome .name {
+  font-size: 2.5rem;
+  margin: 0;
+  color:rgb(255, 255, 255)
+}
+
+#welcome.intro_paragraph{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}

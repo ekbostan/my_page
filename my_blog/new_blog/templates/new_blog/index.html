@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}  
+<link rel="stylesheet" href = "{% static "new_blog/index.css" %}">
+<link rel="stylesheet" href = "{% static "new_blog/post.css" %}">
+
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+      <div class="container">
+        <div class="profile">
+          <img src="{% static "new_blog/images/adim.png" %}" alt="Erol - The author" />
+          <h1 class="name">Erol Kaan</h1>
+        </div>
+        <p class="intro_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem euismod, sollicitudin mi et, consequat neque. Sed interdum vitae sapien ac pharetra. Donec elementum magna ac nulla faucibus bibendum.</p>
+      </div>
+    </section>
+
+    <section id="latest-posts">
+        <h2> My Latest Works </h2>
+        <ul>
+           {% include "new_blog/includes/post_detail.html" %}
+        </ul>
+      </section>
+
+    <section id ="about">
+        <h2> Who Am I?</h2>
+        <p> I love programming </p>
+    </section>
+{% endblock %}
