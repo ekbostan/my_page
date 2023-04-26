@@ -1,12 +1,14 @@
 
   #welcome {
-    background: linear-gradient(to right top, #4e4b5c, #2b2d42);
-    padding: 6rem 12%;
+    background: linear-gradient(to right top, black, #2b2d42);
+    padding: 5rem 12%;
   }
-  
   #welcome header {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 3rem auto;
   }
   
@@ -40,79 +42,44 @@
   }
   #latest-posts {
     background-color: #fafafa;
-    padding: 2rem;
+    padding: 1.6rem;
     border-radius: 12px;
-    width: 60rem;
-    margin: -6rem auto 2rem auto;
+    width: 80rem;
+    margin: -4rem auto 2rem auto;
     box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
   }
   
   #latest-posts h2 {
     text-align: center;
     font-size: 2.5rem;
+    color: #4e4b5c;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
   
   #latest-posts ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Add this to wrap items to next line */
-    justify-content: center;
-    align-items:center;
-    /* gap: 1rem; */
+    flex-wrap: nowrap;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: #4e4b5c;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
   }
   
   #latest-posts li {
-    margin: 1rem;
-    flex-basis: calc(50% - 0.5rem);
+    flex:1;
+    font-size: 1rem;
+    color: #4e4b5c;
   }
-  
-  #about {
-    text-align: center;
-    padding: 3rem;
-    background-image: linear-gradient(to right, #667eea, #764ba2);
-    margin-top: 5rem;
-    transition: all 0.2s ease;
-  }
-  
-  #about h2 {
-    font-size: 3rem;
-  }
-  
-  #about p {
-    font-size: 1.5rem;
-    color: #353535;
-  }
-  #about .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#about .profile {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-#about .profile img {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  margin-right: 2rem;
-}
-
-#about .name {
-  font-size: 2.5rem;
-  margin: 0;
-}
 
 #welcome .container {
   display: flex;
@@ -134,6 +101,9 @@
   height: 10rem;
   border-radius: 50%;
   margin-right: 2rem;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 #welcome .name {
@@ -141,13 +111,56 @@
   margin: 0;
   color:rgb(255, 255, 255)
 }
-
 #welcome.intro_paragraph{
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+#social-media {
+  background-color: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 30rem;
+  margin: 2rem auto;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+}
 
+#social-media h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #4e4b5c;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  
+}
 
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.social-links a {
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.social-links img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
 }

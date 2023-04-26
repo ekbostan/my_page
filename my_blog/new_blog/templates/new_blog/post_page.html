@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Project Name | My Portfolio
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "new_blog/project.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div id="project-container">
+        <div id="project-header">
+            <h1 class="project-title">{{ posts.title }}</h1>
+            <div id="project-image">
+                <img src="{% static 'new_blog/images/'|add:posts.image %}" alt="{{posts.title}}"/>
+            </div>
+        </div>
+        <div id="project-content">
+            <p>
+               {{ posts.explanation }}
+            </p>
+        </div>
+        <div id="project-github">
+            <a href="{{ posts.github }}">
+                <img src="{% static "new_blog/images/github-icon.png" %}" alt="Github Icon">
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,3 @@
-{% extend base.html%}
 {% extends "base.html" %}
 {% load static %}
 
@@ -8,15 +7,18 @@
 {% endblock %}
 
 {% block css_files %}  
-<link rel="stylesheet" href = "{% static "new_blog/index.css" %}">
-<link rel="stylesheet" href = "{% static "new_blog/post.css" %}">
+
+<link rel="stylesheet" href = "{% static "new_blog/post.css" %}"/>
+<link rel="stylesheet" href = "{% static "new_blog/posts_page.css" %}"/>
 {% endblock %}
 
 {% block content %}
 <section id="my-posts"> 
     <h2>My Works </h2>
         <ul>
-            {% include "new_blog/includes/post_detail.html" %}
+            {%for post in posts%}
+                {% include "new_blog/includes/post_detail.html" %}
+            {%endfor%}
         </ul>
     
-
+{% endblock %}

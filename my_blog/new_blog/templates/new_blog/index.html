@@ -6,32 +6,35 @@
     My Blog
 {% endblock %}
 
-{% block css_files %}  
-<link rel="stylesheet" href = "{% static "new_blog/index.css" %}">
-<link rel="stylesheet" href = "{% static "new_blog/post.css" %}">
-
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'new_blog/index.css' %}">
+    <link rel="stylesheet" href="{% static 'new_blog/post.css' %}">
 {% endblock %}
+
 
 {% block content %}
     <section id="welcome">
       <div class="container">
         <div class="profile">
           <img src="{% static "new_blog/images/adim.png" %}" alt="Erol - The author" />
-          <h1 class="name">Erol Kaan</h1>
+          <h1 class="name">Erol Kaan Bostan</h1>
         </div>
-        <p class="intro_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem euismod, sollicitudin mi et, consequat neque. Sed interdum vitae sapien ac pharetra. Donec elementum magna ac nulla faucibus bibendum.</p>
+        <p class="intro_paragraph"></p>
       </div>
     </section>
-
     <section id="latest-posts">
-        <h2> My Latest Works </h2>
+        <h2> My Latest Porjects </h2>
         <ul>
-           {% include "new_blog/includes/post_detail.html" %}
+          {% for post in posts %}
+            {% include "new_blog/includes/post_detail.html" %}
+          {%endfor%}
         </ul>
       </section>
-
-    <section id ="about">
-        <h2> Who Am I?</h2>
-        <p> I love programming </p>
+      <section id="social-media">
+        <h2>Find Me On</h2>
+        <div class="social-links">
+            <a href="https://github.com/ekbostan" target="_blank"><img src="{% static 'new_blog/images/github-icon.png' %}" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/yourusername" target="_blank"><img src="{% static 'new_blog/images/linkedin.png' %}" alt="LinkedIn"></a>
+        </div>
     </section>
 {% endblock %}
