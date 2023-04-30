@@ -13,9 +13,13 @@
     <header id="main-navigation">
       <h1><a href="{% url "home-page" %}">Personal Blog </a> </h1>
           <nav>
-              <a href=" {% url "post-page" %}"> All Projects</a>
-              <a href=" {% url "about-me-page" %}"> About Me </a>
-          <nav>
+            <ul>
+             <li> <a href=" {% url "post-page" %}"> My Projects</a></li> 
+             <li>  <a href=" {% url "about-me-page" %}"> About Me </a></li>
+             <li>  <a href=" {% url "about-me-page" %}"> Resume </a></li> 
+             <li>  <a href=" {% url "about-me-page" %}"> Contact </a></li> 
+              <ul>
+              </nav>
     </header>
     {% block content%}
     {% endblock %}

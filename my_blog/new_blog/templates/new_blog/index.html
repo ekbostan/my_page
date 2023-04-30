@@ -1,40 +1,160 @@
-{% extends "base.html" %}
+
 {% load static %}
 
-
-{% block title %}
-    My Blog
-{% endblock %}
-
-{% block css_files %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/e2f89f16b5.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> home page </title>
     <link rel="stylesheet" href="{% static 'new_blog/index.css' %}">
     <link rel="stylesheet" href="{% static 'new_blog/post.css' %}">
-{% endblock %}
-
-
-{% block content %}
-    <section id="welcome">
+    
+  </head>
+  <body>
+    <div id="header">
       <div class="container">
-        <div class="profile">
-          <img src="{% static "new_blog/images/adim.png" %}" alt="Erol - The author" />
-          <h1 class="name">Erol Kaan Bostan</h1>
+        <div id="img">
+        <img src="{% static "new_blog/images/1.png" %}">
         </div>
-        <p class="intro_paragraph"></p>
+        <div id="navdiv">
+          <nav>
+        
+            <ul>
+              <li><a href="{% url "home-page" %}">Home </a> </li>
+             <li> <a href="#latest-posts"> My Projects</a></li> 
+             {% comment %} <li> <a href=" {% url "post-page" %}"> </a></li>  {% endcomment %}
+             <li>  <a href="#about"> About Me </a></li>
+             <li>  <a href="#contact-me"> Contact </a></li> 
+              <ul>
+              </nav>
+            </div>
+            </div>
+          </div>
+
+  <section id="about-me">
+    <div class="container">
+      <div class= "row">
+        <div class="about-col-1">
+          <img src="{% static "new_blog/images/boutme.png" %}">
+        </div>
+
+        <div class="about-col-2">
+          <h2 class="sub-title">About Me</h2>
+          <p> I am a computer and information science 4th year student with a minor in economics from the University of California, Davis. My coursework includes Artificial Intelligence, Probability and Statistics for Computer Science, Agent-Based Modeling, Probability Theory, and Web Programming. I have experience in full-stack web development, algorithms, and artificial intelligence.I am passionate about data science, data engineering, and Python development and seeking opportunities to leverage my skills and expertise in these areas.</p>
+          <div class ="tab-titles">
+            <p class="tab-links active-link" onclick ="opentab('skills')"> Skills</p>
+            <p class="tab-links" onclick ="opentab('education')"> Education</p>
+         </div>
+         <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>AI/ML</span><br>Designing AI/ML Models</li>
+            <li><span>Full-stack web development</span><br>Web app development</li>
+            <li><span>Data Analysis</span><br>Using SQL,R,Excel and Tableau</li>
+
+          </ul>
+         </div>
+         
+         <div class="tab-contents"id="education">
+          <ul>
+            <li><span>2023 - BSc</span><br>UC Davis Computer Science and Econ minor</li>
+            <li><span>2023 AWS Cloud Practicioner</span><br>Cloud Concepts</li>
+            <li><span>2023 - Currently taking</span><br>Google Data Analytics</li>
+          </ul>
+         </div>
       </div>
-    </section>
+    </div>
+  </div>
+  </section>
     <section id="latest-posts">
-        <h2> My Latest Porjects </h2>
-        <ul>
+      <div id="services">
+        <div class="container1">
+        <h2 class="sub-title"> My Latest Projects </h2>
+        <div class="services-list">
+  
           {% for post in posts %}
-            {% include "new_blog/includes/post_detail.html" %}
-          {%endfor%}
-        </ul>
+          <div id="postlar">
+            <i class="fa-brands fa-codepen"></i>
+          <h3> {{ post.title}}</h3>
+          <p> {{post.content}}</p>
+          <a href="{% url "post-info-page" post.slug %}"><i  class="fa-solid fa-up-right-from-square"></i></a>
+          {% comment %} <img src="{% static 'new_blog/images/'|add:post.image %}" alt="{{post.title}}"/> {% endcomment %}
+          {% comment %} <a href="{% url "post-info-page" post.slug %}"></a> {% endcomment %}
+          </div>
+            {%endfor%}
+
+        
+      </div>
+      <a href=" {% url "post-page" %}" id ="btn1" class= "btn btn3"> See More...</a>
+    </div>
       </section>
-      <section id="social-media">
+
+      {% comment %} <section id="social-media">
         <h2>Find Me On</h2>
         <div class="social-links">
             <a href="https://github.com/ekbostan" target="_blank"><img src="{% static 'new_blog/images/github-icon.png' %}" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/yourusername" target="_blank"><img src="{% static 'new_blog/images/linkedin.png' %}" alt="LinkedIn"></a>
+            <a href="https://www.linkedin.com/in/erol-kaan-bostan-152a56198/" target="_blank"><img src="{% static 'new_blog/images/linkedin.png' %}" alt="LinkedIn"></a>
         </div>
+    </section> {% endcomment %}
+    <section id= "contact-me">
+      <div class="container3">
+        <div class="row">
+          <div class="contact-left">
+          <h4 class="sub-title"> Contact Me </h4>
+          <p><i class="fa-regular fa-envelope"></i>erolkaanbostan2000@gmail.com</p>
+          <div class="social-icons">
+           <a href="https://www.linkedin.com/in/erol-kaan-bostan-152a56198/"> <i class="fa-brands fa-linkedin"></i></a>
+           <a href="https://github.com/ekbostan"> <i class="fa-brands fa-github"></i></a>
+           <a href="https://github.com/ekbostan"> <i class="fa-brands fa-facebook"></i></a>
+           <a href="https://github.com/ekbostan"> <i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <a href="{% static 'new_blog/images/Bostan_Resume.pdf' %}" download class="btn btn2">Downlaod Resume</a>
+        </div>
+        <div class = "contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name"placeholder="Your Name" required>
+            <input type="email" emil="email" placeholder="Your email" required>
+            <textarea name="Message" cols="40" rows="6" placeholder = "Your Message"></textarea>
+            <button type="submit" class= "btn btn2"> Submit</button>
+          </form>
+        </div>
+      </div>
+      </div>
     </section>
-{% endblock %}
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+          if (tablink.innerHTML.toLowerCase() == tabname.toLowerCase()) {
+            tablink.classList.add("active-link");
+          }
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+          if (tabcontent.id.toLowerCase() == tabname.toLowerCase()) {
+            tabcontent.classList.add("active-tab");
+          }
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementsById(tabname).classList.add("active-tab")
+
+      }  
+
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbznbq5eUSIz0lAbgsJAnLtn2fD1004fNFsAeVrvGoVVuGniOLdypYWRuSUCE79_tIwi/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+
+    </script>
+  </body>
+  </hmtl>
