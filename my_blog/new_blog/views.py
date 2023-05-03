@@ -17,4 +17,4 @@ def posts(request):
 def post_info(request,slug):
         
     identified_project = get_object_or_404(Post,slug=slug)
-    return render(request,"new_blog/post_page.html",{"posts":identified_project})
+    return render(request,"new_blog/posts.html",{"post":identified_project})

@@ -1,31 +1,46 @@
-{% extends "base.html" %}
+
 {% load static %}
-
-{% block title %}
-    Project Name | My Portfolio
-{% endblock %}
-
-{% block css_files %}
-    <link rel="stylesheet" href="{% static "new_blog/project.css" %}">
-{% endblock %}
-
-{% block content %}
-    <div id="project-container">
-        <div id="project-header">
-            <h1 class="project-title">{{ posts.title }}</h1>
-            <div id="project-image">
-                <img src="{% static 'new_blog/images/'|add:posts.image %}" alt="{{posts.title}}"/>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/e2f89f16b5.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> home page </title>
+    <link rel="stylesheet" href="{% static 'new_blog/index.css' %}">
+    <link rel="stylesheet" href="{% static 'new_blog/posts_page.css' %}">
+    
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="img">
+        <img src="{% static "new_blog/images/1.png" %}">
         </div>
+        <div id="navdiv">
+          <nav>
+        
+            <ul>
+              <li><a href="{% url "home-page" %}">Home </a> </li>
+             <li> <a href="{% url "post-page" %}"> My Projects</a></li> 
+             <li>  <a href="{% url "home-page"%}#about"> About Me </a></li>
+             <li>  <a href="{% url "home-page"%}#contact-me"> Contact </a></li> 
+              <ul>
+              </nav>
+            </div>
+            </div>
+          </div>
+    <div id="project-container">
+            <h1 class="project-title">{{ posts.title }}</h1>
+                <img src="{% static 'new_blog/images/'|add:posts.image %}" alt="{{posts.title}}"/>
+    </div>
         <div id="project-content">
             <p>
                {{ posts.explanation }}
             </p>
         </div>
         <div id="project-github">
-            <a href="{{ posts.github }}">
-                <img src="{% static "new_blog/images/github-icon.png" %}" alt="Github Icon">
-            </a>
+                <a href="{{ posts.github }}"><i class="fa-brands fa-github"></i></a>
         </div>
     </div>
-{% endblock %}
+

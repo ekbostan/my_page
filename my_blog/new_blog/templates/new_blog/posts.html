@@ -1,24 +1,48 @@
-{% extends "base.html" %}
+
 {% load static %}
-
-
-{% block title %}
-   All My Posts
-{% endblock %}
-
-{% block css_files %}  
-
-<link rel="stylesheet" href = "{% static "new_blog/post.css" %}"/>
-<link rel="stylesheet" href = "{% static "new_blog/posts_page.css" %}"/>
-{% endblock %}
-
-{% block content %}
-<section id="my-posts"> 
-    <h2>My Works </h2>
-        <ul>
-            {%for post in posts%}
-                {% include "new_blog/includes/post_detail.html" %}
-            {%endfor%}
-        </ul>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/e2f89f16b5.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> home page </title>
+    <link rel="stylesheet" href="{% static 'new_blog/index.css' %}">
+    <link rel="stylesheet" href ="{% static 'new_blog/post.css' %}">
     
-{% endblock %}
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <div id="img">
+        <img src="{% static "new_blog/images/1.png" %}">
+        </div>
+        <div id="navdiv">
+          <nav>
+        
+            <ul>
+              <li><a href="{% url "home-page" %}">Home </a> </li>
+             <li> <a href="#latest-posts"> My Projects</a></li> 
+             <li>  <a href="{% url "home-page" %}#about"> About Me </a></li>
+             <li>  <a href="{% url "home-page" %}#contact-me"> Contact </a></li> 
+              <ul>
+              </nav>
+            </div>
+            </div>
+          </div>
+
+<section class= "portfolio" id="portfolio"> 
+    <h2 class="heading">Latest<span> Projects</span> </h2>
+    <div class="portfolio-container">
+        {%for post in posts%}
+        <div class="portfolio-box">
+            <img src="{% static 'new_blog/images/'|add:post.image %}" alt="{{post.title}}"/>
+            <div class="portfolio-layer">
+                <h4>{{ post.title}}</h4>
+                <p> {{post.content}}</p>
+                <a href="{{post.github}}"><i  class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+        
+    
